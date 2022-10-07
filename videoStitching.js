@@ -24,4 +24,23 @@ class VideoStitching {
 
     }
 
+    longestClipFromASpecificTime(specificTime)
+    {
+        let longestClip = false;
+        let longestTimeChange = 0;
+
+        for(let clip of this.clips)
+        {
+            let timeChange = clip - specificTime;
+
+            if(clip[0] <= specificTime && timeChange > longestTimeChange)
+            {
+                longestTimeChange = timeChange;
+                longestClip = clip;
+            }
+        }
+
+        return longestClip;
+    }    
+
 }
