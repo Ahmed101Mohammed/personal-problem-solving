@@ -43,4 +43,21 @@ class VideoStitching {
         return longestClip;
     }    
 
+    isTheCoveredClipsRight()
+    {
+        if(this.clipsCoveredTheTargetTime.length === 0)
+        {
+            return false;
+        }
+
+        let startTime = this.clipsCoveredTheTargetTime[0][0];
+        let endTime = this.clipsCoveredTheTargetTime[this.clipsCoveredTheTargetTime.length - 1][1];
+
+        if(startTime === 0 && endTime >= this.targetTime)
+        {
+            return true;
+        }
+
+        return false;
+    }
 }
