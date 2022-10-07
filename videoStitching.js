@@ -4,6 +4,8 @@ class VideoStitching {
         this.clips = clips || null;
         this.targetTime = targetTime || null;
         this.clipsCoveredTheTargetTime = [];
+        this.findClipsCoveredTheTargetTime(0);
+        this.isTheCoveredClipsRight();
     }
 
     findClipsCoveredTheTargetTime(starterTime)
@@ -57,7 +59,18 @@ class VideoStitching {
         {
             return true;
         }
-
+        this.clipsCoveredTheTargetTime = [];
         return false;
     }
+
+    getTheNumberOfclipsCoveredTheTargetTime()
+    {
+        if(this.clipsCoveredTheTargetTime.length > 0)
+        {
+            return this.clipsCoveredTheTargetTime.length;
+        }
+
+        return -1;
+    }
+
 }
