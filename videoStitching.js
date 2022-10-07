@@ -6,4 +6,22 @@ class VideoStitching {
         this.clipsCoveredTheTargetTime = [];
     }
 
+    findClipsCoveredTheTargetTime(starterTime)
+    {
+        if(starterTime = this.targetTime)
+        {
+            return;
+        }
+
+        let newClipCoveredAPartOfTargetTime = this.longestClipFromASpecificTime(starterTime);
+        
+        if(newClipCoveredAPartOfTargetTime)
+        {
+            this.clipsCoveredTheTargetTime.push(newClipCoveredAPartOfTargetTime);
+            starterTime = newClipCoveredAPartOfTargetTime[1];
+            this.findClipsCoveredTheTargetTime(starterTime);
+        }                
+
+    }
+
 }
