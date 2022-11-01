@@ -69,6 +69,7 @@ class VideoStitching {
 
     getTheNumberOfclipsCoveredTheTargetTime()
     {
+        this.isTheCoveredClipsRight();
         if(this.clipsCoveredTheTargetTime.length > 0)
         {
             return this.clipsCoveredTheTargetTime.length;
