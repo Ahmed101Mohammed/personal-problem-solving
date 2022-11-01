@@ -10,7 +10,7 @@ class VideoStitching {
 
     findClipsCoveredTheTargetTime(starterTime)
     {
-        if(starterTime = this.targetTime)
+        if(starterTime >= this.targetTime)
         {
             return;
         }
@@ -22,7 +22,7 @@ class VideoStitching {
             this.clipsCoveredTheTargetTime.push(newClipCoveredAPartOfTargetTime);
             starterTime = newClipCoveredAPartOfTargetTime[1];
             this.findClipsCoveredTheTargetTime(starterTime);
-        }                
+        }              
 
     }
 
@@ -33,7 +33,7 @@ class VideoStitching {
 
         for(let clip of this.clips)
         {
-            let timeChange = clip - specificTime;
+            let timeChange = clip[1] - specificTime;
 
             if(clip[0] <= specificTime && timeChange > longestTimeChange)
             {
