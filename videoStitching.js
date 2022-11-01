@@ -22,7 +22,11 @@ class VideoStitching {
             this.clipsCoveredTheTargetTime.push(newClipCoveredAPartOfTargetTime);
             starterTime = newClipCoveredAPartOfTargetTime[1];
             this.findClipsCoveredTheTargetTime(starterTime);
-        }              
+        }
+        else
+        {
+            return -1;
+        }               
 
     }
 
