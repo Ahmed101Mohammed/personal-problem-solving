@@ -54,4 +54,9 @@ class topXFrequentIntegersOfArray {
         this.arrayOfItems = arrayOfInteger;
         this.arrayOfMostFrequentItems = [];
     }
+
+    hashingTheArrayOfItems()
+    {
+
+    }
 }
