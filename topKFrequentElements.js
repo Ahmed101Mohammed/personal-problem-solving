@@ -47,7 +47,7 @@ class HashMapForNumbers{
 }
 
 
-class topXFrequentIntegersOfArray {
+class TopXFrequentIntegersOfArray {
     constructor(xItems, arrayOfInteger)
     {
         this.mostFequnetItemsNumber = xItems;
@@ -57,6 +57,20 @@ class topXFrequentIntegersOfArray {
 
     hashingTheArrayOfItems()
     {
+        let hashingItems = new HashMapForNumbers();
+        for(let item of this.arrayOfItems)
+        {
+            if(!(hashingItems.get(item)))
+            {
+                hashingItems.add(item,[item,1]);
+            }
+            else
+            {
+                let numberOfFrequency = hashingItems.get(item)[1];
+                hashingItems.add(item,[item, numberOfFrequency + 1]);
+            }
+        }
 
+        return hashingItems;
     }
 }
