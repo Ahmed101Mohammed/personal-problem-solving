@@ -77,4 +77,26 @@ class TopXFrequentIntegersOfArray {
 
         return hashingItems;
     }
+
+    getAnArrayFromHashingMap(hashingMap)
+    {
+        let arrayWithoutUndefined = [];
+        for(let item of hashingMap.numbers)
+        {
+            if(item !== undefined)
+            {
+                arrayWithoutUndefined.push(item);
+            }
+        }
+
+        for(let item of hashingMap.minusNambers)
+        {
+            if(item !== undefined)
+            {
+                arrayWithoutUndefined.push(item);
+            }
+        }
+
+        return arrayWithoutUndefined;
+    }
 }
