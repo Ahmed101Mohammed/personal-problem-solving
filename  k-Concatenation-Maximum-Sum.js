@@ -67,4 +67,16 @@ class kConcatenationMaximumSum
             hashMap.add(index, this.bigestSum(index, numericArray, hashMap));
         }
     }
+
+    bigestSum(index, numericArray, hashMap)
+    {
+        const sumOfTwoIndexs = hashMap.get(index + 1) + numericArray[index];
+        const indexValue = numericArray[index];
+        if(sumOfTwoIndexs >= indexValue)
+        {
+            return sumOfTwoIndexs
+        }
+
+        return indexValue;
+    }
 }
