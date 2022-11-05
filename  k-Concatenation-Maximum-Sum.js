@@ -59,10 +59,10 @@ class kConcatenationMaximumSum
 
         if(!hashMap.get(index + 1))
         {
-            this.longestSumOfSubsetOfNumericArray(index + 1, numericArray, hashMap);
+            this.bigestSumOfEachIndexOfNumericArray(index + 1, numericArray, hashMap);
         }
 
-        if(hashMap.get(index+1))
+        if(hashMap.get(index+1) !== false)
         {
             hashMap.add(index, this.bigestSum(index, numericArray, hashMap));
         }
