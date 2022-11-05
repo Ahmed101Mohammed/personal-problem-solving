@@ -50,5 +50,21 @@ class HashMapForNumbers{
 
 class kConcatenationMaximumSum
 {
-    
+    bigestSumOfEachIndexOfNumericArray(index = 0, numericArray, hashMap)
+    {
+        if(index === numericArray.length - 1)
+        {
+            return hashMap.add(index, numericArray[index])
+        }
+
+        if(!hashMap.get(index + 1))
+        {
+            this.longestSumOfSubsetOfNumericArray(index + 1, numericArray, hashMap);
+        }
+
+        if(hashMap.get(index+1))
+        {
+            hashMap.add(index, this.bigestSum(index, numericArray, hashMap));
+        }
+    }
 }
